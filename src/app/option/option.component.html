@@ -1,0 +1,85 @@
+<div>
+	<div>
+		<button style="float: left; margin-left: 200px" (click)="toggleOptionChain()">{{option_btn_msg}}</button>
+	</div>
+<div *ngIf="showOptionChain" style="width: 80%; height: 80%; text-align:center;margin-left: 100px; padding:0; margin-top: 100px">
+	<div style="text-align:center;margin-left: 50px; padding:0; margin-top: 5px;color:orange;font-size:30px">
+		<span>{{symbol}} Option Chain</span>
+	</div>
+	<div style="margin-top: 10px;">
+	<div class="headersText">
+		<span>Time : {{currentTime}}</span>
+	</div>
+	<div class="headersText">
+		<span>Spot Price : {{currentPrice}}</span>
+	</div>
+	<div class="headersText">
+		<label for="expiry"> Expiry Date </label>
+		<select name="expiryDate" id="expiry" class="form-control" [(ngModel)]="expiryDate" (change)="changeExpiry($event)">
+	    	<option *ngFor="let option of expiryDates" [value]="option" >{{option}}</option>
+		</select>
+	</div>
+	<div class="headersText">
+		<label for="strike"> Strike Price </label>
+		<select name="strikePrice" id="strike" class="form-control" [(ngModel)]="strikePrice" (change)="changeStrikePrice($event)">
+			<option value="" [selected]="strikePrice!=0"> --Select-- </option>
+    		<option *ngFor="let option of strikePrices" [value]="option" >{{option}}</option>
+		</select>
+	</div>
+	</div>
+	<div style="margin-top: 30px">
+		<div class="headersText2">
+			<span>Total Call Open Interest : {{totalCallOI}}</span>
+		</div>
+		<div class="headersText2">
+			<span>Total Put Open Interest : {{totalPutOI}}</span>
+		</div>
+	</div>
+	<div style="margin-top: 50px">
+ 	<ng2-smart-table  [settings]="settings" [source]="data_json"></ng2-smart-table>
+ 	</div>
+</div>
+<div *ngIf="!showOptionChain">
+<div style="width: 50%; height: 100%; text-align:center; padding:0; margin-top: 100px; ">
+	<ngx-charts-bar-vertical-2d
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="chart_data_oi"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel">
+</ngx-charts-bar-vertical-2d>
+</div>
+
+<div style="width: 50%; height: 100%; text-align:center; padding:0; margin-top: 100px">
+	<ngx-charts-bar-vertical-2d
+  [view]="view2"
+  [scheme]="colorScheme"
+  [results]="chart_data_change_oi"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="false"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabelChange">
+</ngx-charts-bar-vertical-2d>
+</div>
+
+<div style="width: 30%; height: 100%; text-align:center; padding:0; float:right;margin-top: -300px;margin-right: 100px">
+	<label style="font-size: 18px">Sentiments (Daily)</label>
+	<ng2-smart-table  [settings]="options_settings" [source]="options_aggregated_data"></ng2-smart-table>
+</div>
+
+<div style="width: 30%; height: 100%; text-align:center; padding:0; float:right;margin-top: 100px;margin-right: 100px">
+	<label style="font-size: 18px">Sentiments (Intraday)</label>
+	<ng2-smart-table  [settings]="options_settings" [source]="oi_change_aggregated_data"></ng2-smart-table>
+</div>
+</div>
+</div>

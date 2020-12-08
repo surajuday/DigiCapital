@@ -1,0 +1,40 @@
+li {
+	float: center;
+	margin: 20px 20px auto;
+	padding: 5px 5px auto;
+  font-size: 22px;
+  color:green;
+
+}
+ol {
+  float: center;
+  margin: 20px 20px auto;
+  padding: 5px 5px auto;
+  font-size: 22px;
+  color:green;
+}
+
+li.no-bullets {
+  list-style-type: none; /* Remove bullets */
+}
+
+
+p {
+  white-space: pre-line;
+  font-size: 17px;
+}
+
+.address-details {
+  margin-left: 300px;
+}
+
+#company-address {
+    width: 400px;
+    float: left;
+    display: inline-block !important;
+}
+#registrar-address {
+    width: 400px;
+    float: left;
+    display: inline-block !important;
+}

@@ -1,0 +1,29 @@
+#strkCls {
+  color: yellow;
+  border:10px solid blue;
+}
+
+.strkCls { 
+  color: yellow;
+  border:10px solid blue;
+}
+
+.positive {
+    color: green;
+}
+
+.negative {
+    color: red;
+}
+
+.atmrow{
+	color: blue;
+	font-size: 20px;
+}
+
+:host /deep/ tr.solved {
+background: rgba(86, 241, 86, 0.5);
+}
+:host /deep/ tr..aborted {
+background: rgba(243, 69, 69, 0.5);
+}

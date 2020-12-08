@@ -1,0 +1,27 @@
+<div style="width: 80%; height: 80%; text-align:center;margin-left: 80px; padding:0; margin-top: 80px">
+	<div *ngIf="ongoing_ipo_exist" style="text-align:center;margin-top: 50px"> 
+		<h2>Ongoing IPO</h2>
+		<h3>Following companies have opened up for IPO subscription. Start applying</h3>
+    	<ng2-smart-table  [settings]="ongoing_settings" [source]="ongoing_ipo"></ng2-smart-table>
+	</div> 
+
+	<div *ngIf="upcoming_ipo_exist" style="text-align:center;margin-top: 50px"> 
+		<h2>Upcoming IPO</h2>
+		<h3>These companies will be opening up for IPO subscription soon</h3>
+    	<ng2-smart-table  [settings]="ongoing_settings" [source]="upcoming_ipo"></ng2-smart-table>
+	</div> 
+
+	<div *ngIf="abouttoblisted_ipo_exist" style="text-align:center;margin-top: 50px"> 
+		<h2>About to be Listed IPO</h2>
+		<h3>IPO subscription has ended for the following companies.
+Currently, shares are being allotted and will be listed in stock market soon.</h3>
+    	<ng2-smart-table  [settings]="tobelisted_settings" [source]="abouttoblisted_ipo"></ng2-smart-table>
+	</div> 
+
+	<div *ngIf="listed_ipo_exist" style="text-align:center;margin-top: 50px"> 
+		<h2>Recently Listed IPOs</h2>
+		<h3>These companies are listed in the markets recently after IPO allotment.</h3>
+    	<ng2-smart-table  [settings]="listed_settings" [source]="listed_ipo"></ng2-smart-table>
+	</div>  
+	
+</div>

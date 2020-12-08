@@ -1,0 +1,26 @@
+<div style="width: 45%; height: 80%; text-align:center;margin-left: 10px; padding:0; margin-top: 80px;display: block;float: left;">
+	<div style="margin-left: 40%; padding:20px; margin-top: 10px; margin-bottom: 20px">
+		<button style="float: left; margin-right: 10px" (click)="changeDuration('5')">5m</button>
+		<button style="float: left; margin-right: 10px" (click)="changeDuration('15')">15m</button>
+		<button style="float: left; margin-right: 10px" (click)="changeDuration('30')">30m</button>
+		<button style="float: left;" (click)="changeDuration('60')">1h</button>
+	</div>
+	<ng2-smart-table  [settings]="settings" [source]="data_json"></ng2-smart-table>
+</div>
+
+<div style="width: 45%; height: 80%; text-align:center;margin-left: 10px; padding:0; margin-top: 200px;display: block;float: left;">
+	<ngx-charts-line-chart
+  [view]="view"
+  [scheme]="colorScheme"
+  [legend]="legend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxis]="xAxis"
+  [yAxis]="yAxis"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  [timeline]="timeline"
+  [results]="chart_data"
+  >
+</ngx-charts-line-chart>
+</div>

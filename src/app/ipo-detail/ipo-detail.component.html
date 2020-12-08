@@ -1,0 +1,53 @@
+<div style="width: 80%; height: 80%; text-align:center;margin-left: 100px; padding:0; margin-top: 80px">
+	<h1>{{ipoCompanyName}} IPO</h1>
+	<div id="ipo_details" style="width: 80%; margin-left: 150px; margin-top: 25px;margin-bottom: 25px">
+		<ng2-smart-table  [settings]="ipo_details_settings" [source]="ipoDetailData"></ng2-smart-table>
+	</div>
+
+	<h1>Timeline of {{ipoCompanyName}} IPO</h1>
+	<div id="ipo_timeline" style="width: 80%; margin-left: 150px; margin-top: 25px;margin-bottom: 25px">
+		<ng2-smart-table  [settings]="ipo_timeline_settings" [source]="ipoTimelineData"></ng2-smart-table>
+	</div>
+
+	<h1>Shares Offered for {{ipoCompanyName}} IPO</h1>
+	<div id="ipo_shares_offered" style="width: 80%; margin-left: 150px; margin-top: 25px;margin-bottom: 25px">
+		<ng2-smart-table  [settings]="ipo_shares_offered_settings" [source]="ipoSharesOfferedData"></ng2-smart-table>
+	</div>
+
+	<h1>Subscription Status for {{ipoCompanyName}} IPO</h1>
+	<div id="ipo_subscription" style="width: 80%; margin-left: 150px; margin-top: 25px;margin-bottom: 25px">
+		<ng2-smart-table  [settings]="ipo_subscription_settings" [source]="ipoSubscriptionData"></ng2-smart-table>
+	</div>
+
+	<h1>Financial Performance of {{ipoCompanyName}}</h1>
+	<div id="ipo_financial" style="width: 80%; margin-left: 150px; margin-top: 25px;margin-bottom: 25px">
+		<ng2-smart-table  [settings]="ipo_financial_settings" [source]="ipoFinancialData"></ng2-smart-table>
+	</div>
+
+	<h1>Company Objective for {{ipoCompanyName}} IPO</h1>
+	<h3>The net proceeds of the IPO are proposed to be used as set forth below:</h3>
+	<li class="no-bullets" *ngFor="let objective of objectives; index as i; ">{{i+1}} . {{objective}}</li>
+
+	<h1>About {{ipoCompanyName}}</h1>
+	<p>{{aboutCompany}}</p>
+
+	<h1>Contact Details of {{ipoCompanyName}}</h1>
+	<div class="address-details">
+	<div id="company-address">
+		<div><label style="font-size: 25px;margin-bottom: 40px">{{ipoCompanyName}} Address</label></div>
+		<div><span>{{addLine1}}</span></div>
+		<div><span>{{addLine2}}</span></div>
+		<div><span>Phone : {{phone}}</span></div>
+		<div><span>Email : {{email}}</span></div>
+		<div><span>Website : {{website}}</span></div>
+	</div>
+	<div id="registrar-address">
+		<div><label style="font-size: 25px;margin-bottom: 40px">Registrar of IPO Address</label></div>
+		<div><span>{{reg_name}}</span></div>
+		<div><span>{{reg_addLine1}}</span></div>
+		<div><span>{{reg_addLine2}}</span></div>
+		<div><span>Phone : {{reg_phone}}</span></div>
+		<div><span>Fax : {{reg_fax}}</span></div>
+	</div>
+	</div>
+</div>
